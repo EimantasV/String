@@ -1,0 +1,1 @@
+Programa randa pasikartojančius žodzius, juos suskaičiuoja, surašo į lentelę vietas, suranda URL.<br>

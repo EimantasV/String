@@ -1,0 +1,7 @@
+# VSCode
+.vscode/
+*.exe
+*.o
+Vykeliai.txt
+Nevykeliai.txt
+result.txt
