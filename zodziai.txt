@@ -12,5 +12,5 @@ In the C++ Standard Library, there are four ordered associative containers and f
 http://memes.BRUUUH/dhfj45y45yu56trw45yGTY&t23jY*^&#TG@T~()
 Note that the meanings implied by containers are same except one is strict about maintaining order among the objects stored whereas another one is not. This means that ordered ones store the keys in a sorted order, but the unordered ones have no such order. That's all the difference. Here, we'll take up only the ordered associative container and discuss it with examples.
 Set Associative Container
-www.eima.lt
+www.eima.lt gae.wy
 The set associative containers store values in such a way that the storage and retrieval of the container object is fast. The idea of "set" is derived from the mathematical set theory which does not allow duplicate elements. The elements stored in the set associative container must be unique. Any attempt to insert a duplicate element in the set is ignored according to the mathematical behavior of the set. It supports bidirectional iterators but does not support random access iterators. If we consider that the order of the objects in the set is not required, we can simply use its unordered version, called unordered_set. Otherwise, both ordered set and unordered_set are same in their functionality.

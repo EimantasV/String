@@ -72,87 +72,31 @@ int main()
         for(int i =0;i<txt.length();i++) // find URL
         {   
             string temp;
-            if(txt[i]=='h')
-            if(txt[i+1]=='t')
-            if(txt[i+2]=='t')
-            if(txt[i+3]=='p')
-            if(txt[i+4]==':')
-            if(txt[i+5]=='/')
-            if(txt[i+6]=='/')// found http://
+            if(txt[i]=='.')
             {
-                temp="http://";
-                for(int a =i+7;a<txt.length();a++) // find URL
+                temp = ".";
+                int forward=i+1;
+                int backward=i-1;
+                bool islink=false;
+                while( forward < txt.length() && txt[forward]>32 )
                 {
-                    if(txt[a]>32)
-                    {
-                        temp += txt[a];
-                    }
-                    else
-                    {
-                        links.push_back(temp);
-                        break;
-                    }
-                    if(a==txt.length()-1)
-                    {
-                        links.push_back(temp);
-                    }
+                    islink = true;
+                    temp += txt[forward];
+                    forward++;
                 }
-            }
-
-            if(txt[i]=='h')
-            if(txt[i+1]=='t')
-            if(txt[i+2]=='t')
-            if(txt[i+3]=='p')
-            if(txt[i+4]=='s')
-            if(txt[i+5]==':')
-            if(txt[i+6]=='/')
-            if(txt[i+7]=='/')// found https://
-            {
-                temp="https://";
-                for(int a =i+8;a<txt.length();a++) // find URL
+                if(islink)
                 {
-                    if(txt[a]>32)
+                    while( backward >= 0 && txt[backward]>32)
                     {
-                        temp += txt[a];
+                        temp = txt[backward] + temp;
+                        backward--;
                     }
-                    else
-                    {
-                        links.push_back(temp);
-                        break;
-                    }
-                    if(a==txt.length()-1)
-                    {
-                        links.push_back(temp);
-                    }
+                    links.push_back(temp);
+                    i = forward;
                 }
+                
             }
-            
-            if(txt[i]=='w')
-            if(txt[i+1]=='w')
-            if(txt[i+2]=='w')
-            if(txt[i+3]=='.')
-            {
-                temp="www.";
-                for(int a =i+4;a<txt.length();a++) // find URL
-                {
-                    if(txt[a]>32)
-                    {
-                        temp += txt[a];
-                    }
-                    else
-                    {
-                        links.push_back(temp);
-                        break;
-                    }
-                    if(a==txt.length()-1)
-                    {
-                        links.push_back(temp);
-                    }
-                }
-            }
-            
         }
-
         lineID++;
     }
     input.close();
