@@ -24,7 +24,7 @@ int main()
     {
         txt="";
         getline(input,txt);
-
+        txt +=" ";
         for(int i =0;i<txt.length();i++) // find words
         {
             singleWord = false;
@@ -52,20 +52,6 @@ int main()
                 }
                 isInserted=true;
                 wordBuild="";
-            }
-            
-            if((i==txt.length()-1) && !isInserted)
-            {
-                if(zdzC.find(wordBuild) == zdzC.end()) // not found
-                {
-                    zdzC[wordBuild].push_back(1);
-                    zdzC[wordBuild].push_back(lineID);
-                }
-                else
-                {
-                    zdzC[wordBuild][0] +=1;
-                    zdzC[wordBuild].push_back(lineID);
-                }
             }
         }
         
